@@ -13,7 +13,8 @@
             font-family: Arial, sans-serif;
         }
 
-        .background-video {
+        /* Background Video */
+        #bgVideo {
             position: fixed;
             top: 0;
             left: 0;
@@ -41,7 +42,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.85); /* Mas transparent para kita ang video */
             transform: rotateY(90deg);
             transition: transform 1s ease;
             flex-direction: column;
@@ -90,20 +91,11 @@
 </head>
 
 <body>
-   <video autoplay loop muted playsinline id="bgVideo">
-    <source src="video1.mp4" type="video/mp4">
-</video>
-<style>
-    #bgVideo {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: -1;
-    }
-</style>
+    <!-- Background Video -->
+    <video autoplay loop muted playsinline id="bgVideo">
+        <source src="video1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
     <div class="container">
         <div class="slide active" id="slide1">
