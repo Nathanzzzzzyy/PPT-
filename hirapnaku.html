@@ -21,7 +21,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            z-index: 0;
+            z-index: -1;
         }
 
         .container {
@@ -105,9 +105,34 @@
         }
 
         .slide img {
-            max-width: 40%;
-            max-height: 60%;
+            max-width: 50%;
+            max-height: 70%;
             border-radius: 10px;
+        }
+
+        #slide1 img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        #slide1 h1 {
+            position: relative;
+            z-index: 1;
+        }
+
+        #slide3 .image-container img {
+            max-width: 45%;
+            max-height: 65%;
+        }
+
+        #slide4 .image-container img {
+            max-width: 30%;
+            max-height: 60%;
         }
     </style>
 </head>
@@ -121,8 +146,8 @@
 
     <div class="container">
         <div class="slide active" id="slide1">
-            <h1>GRADE<br>CALCULATOR</h1>
-            <img src="image0_transparent.png" alt="Grade Calculator Illustration">
+            <h1>🖩GRADE<br>CALCULATOR</h1>
+            <img src="image0_transparent.png" alt="Background Image">
         </div>
 
         <div class="slide" id="slide2">
