@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Grade Calculator Presentation</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
@@ -12,9 +12,9 @@
             box-sizing: border-box;
             overflow: hidden;
             font-family: 'Poppins', sans-serif;
-            color: white;
         }
 
+        /* Background Video */
         #bgVideo {
             position: fixed;
             top: 0;
@@ -44,21 +44,18 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(10px);
             transform: rotateY(90deg);
             transition: transform 1s ease;
             flex-direction: column;
+            color: white;
             text-align: center;
+            padding: 20px;
         }
 
         .active {
             transform: rotateY(0deg);
-        }
-
-        h1, h2 {
-            font-family: 'Orbitron', sans-serif;
-            text-transform: uppercase;
         }
 
         .btn-container {
@@ -92,16 +89,26 @@
             cursor: not-allowed;
         }
 
-        .image-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
+        .slide img {
+            max-width: 90%;
+            max-height: 60%;
+            border-radius: 10px;
             margin-top: 20px;
         }
 
-        img {
-            max-width: 45%;
-            border-radius: 10px;
+        .image-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+
+        .image-group img {
+            max-width: 30%;
+            max-height: 50vh;
+            object-fit: contain;
         }
     </style>
 </head>
@@ -110,6 +117,7 @@
     <video autoplay loop muted playsinline id="bgVideo">
         <source src="video1.mp4" type="video/mp4">
         <source src="video1.webm" type="video/webm">
+        Your browser does not support the video tag.
     </video>
 
     <div class="container">
@@ -118,7 +126,7 @@
         </div>
 
         <div class="slide" id="slide2">
-            <h2>👥 Member's</h2>
+            <h2>👥 Members</h2>
             <p>John Francis Pescador</p>
             <p>Jonathan Mabag</p>
             <p>Dale Catabay</p>
@@ -127,7 +135,7 @@
 
         <div class="slide" id="slide3">
             <h2>🖥️ User Interface</h2>
-            <div class="image-container">
+            <div class="image-group">
                 <img src="image1.png" alt="UI Screenshot">
                 <img src="image2.png" alt="UI Screenshot 2">
             </div>
@@ -135,8 +143,8 @@
 
         <div class="slide" id="slide4">
             <h2>💻 Code</h2>
-            <div class="image-container">
-                <img src="image3.png" alt="Code Screenshot">
+            <div class="image-group">
+                <img src="image3.png" alt="Code Screenshot 1">
                 <img src="image4.png" alt="Code Screenshot 2">
                 <img src="image5.png" alt="Code Screenshot 3">
             </div>
@@ -144,13 +152,10 @@
 
         <div class="slide" id="slide5">
             <h2>🎥 Demonstration</h2>
-            <ol>
-                <li>Open the Grade Calculator application.</li>
-                <li>Input sample grades.</li>
-                <li></li>(e.g., Prelims: 85, Midterms: 90, Finals: 88).</li>
-                <li>Click 'Calculate' to see the result.</li>
-                <li>Show how 'Clear' and 'Exit' buttons work.</li>
-            </ol>
+            <p>1. Open the Grade Calculator application.</p>
+            <p>2. Input sample grades (e.g., Prelims: 85, Midterms: 90, Finals: 88).</p>
+            <p>3. Click 'Calculate' to see the result.</p>
+            <p>4. Show how 'Clear' and 'Exit' buttons work.</p>
         </div>
 
         <div class="slide" id="slide6">
