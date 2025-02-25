@@ -9,10 +9,47 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            background: #f0f0f0;
+            background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fad0c4, #ffdde1);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
             overflow: hidden;
             font-family: Arial, sans-serif;
+            position: relative;
         }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .shooting-star {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: shootingStar 3s linear infinite;
+        }
+
+        @keyframes shootingStar {
+            from {
+                transform: translateX(100vw) translateY(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(-100vw) translateY(100vh);
+                opacity: 0;
+            }
+        }
+
         .container {
             display: flex;
             align-items: center;
@@ -20,6 +57,7 @@
             height: 100vh;
             perspective: 1200px;
         }
+
         .slide {
             position: absolute;
             width: 80vw;
@@ -34,9 +72,11 @@
             transition: transform 1s ease;
             flex-direction: column;
         }
+
         .active {
             transform: rotateY(0deg);
         }
+
         .btn-container {
             position: fixed;
             bottom: 30px;
@@ -45,22 +85,30 @@
             justify-content: center;
             gap: 20px;
         }
+
         button {
-            padding: 10px 20px;
-            font-size: 18px;
+            padding: 12px 25px;
+            font-size: 20px;
             cursor: pointer;
             border: none;
             border-radius: 10px;
             background: #4CAF50;
             color: white;
+            transition: 0.3s;
         }
+
+        button:hover {
+            background: #45a049;
+        }
+
         button:disabled {
             background: #aaa;
             cursor: not-allowed;
         }
+
         img {
-            max-width: 100%;
-            max-height: 60%;
+            max-width: 90%;
+            max-height: 70%;
             border-radius: 10px;
             margin-top: 20px;
         }
@@ -68,14 +116,23 @@
 </head>
 
 <body>
+    <script>
+        for (let i = 0; i < 15; i++) {
+            let star = document.createElement("div");
+            star.classList.add("shooting-star");
+            star.style.top = Math.random() * 100 + "vh";
+            star.style.left = Math.random() * 100 + "vw";
+            star.style.animationDuration = (Math.random() * 3 + 2) + "s";
+            document.body.appendChild(star);
+        }
+    </script>
+
     <div class="container">
-        <!-- Slide 1: Grade Calculator -->
         <div class="slide active" id="slide1">
             <h1>📊 Grade Calculator</h1>
-             <img src="image1.png" alt="UI Screenshot">
+            <img src="image1.png" alt="UI Screenshot">
         </div>
 
-        <!-- Slide 2: Members -->
         <div class="slide" id="slide2">
             <h2>👥 Members</h2>
             <p>JOHN FRANCIS PESCADOR</p>
@@ -84,31 +141,26 @@
             <p>DANIEL LACANARIA</p>
         </div>
 
-        <!-- Slide 3: UI -->
         <div class="slide" id="slide3">
             <h2>🖥️ UI</h2>
             <img src="image2.png" alt="Code Screenshot">
         </div>
 
-        <!-- Slide 4: Code -->
         <div class="slide" id="slide4">
             <h2>💻 Code</h2>
-           <img src="image3.png" alt="Demonstration Screenshot">
+            <img src="image3.png" alt="Demonstration Screenshot">
         </div>
 
-        <!-- Slide 5: Demonstration -->
         <div class="slide" id="slide5">
             <h2>🎥 Demonstration</h2>
             <img src="image4.png" alt="Demonstration Screenshot">
         </div>
 
-        <!-- Slide 6: Thank You -->
         <div class="slide" id="slide6">
             <h1>🙏 Thank You for Listening!</h1>
         </div>
     </div>
 
-    <!-- Navigation Buttons -->
     <div class="btn-container">
         <button id="prevBtn" onclick="prevSlide()" disabled>⬅ Previous</button>
         <button id="nextBtn" onclick="nextSlide()">Next ➡</button>
@@ -121,8 +173,6 @@
         function showSlide(slideNumber) {
             document.querySelectorAll('.slide').forEach(slide => slide.classList.remove('active'));
             document.getElementById('slide' + slideNumber).classList.add('active');
-
-            // Disable buttons if at start or end
             document.getElementById('prevBtn').disabled = slideNumber === 1;
             document.getElementById('nextBtn').disabled = slideNumber === totalSlides;
         }
