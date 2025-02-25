@@ -90,10 +90,23 @@
 </head>
 
 <body>
-    <video class="background-video" autoplay loop muted>
-        <source src="video1.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+   <video autoplay loop muted playsinline id="bgVideo">
+    <source src="Developer Coding Background.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+<style>
+    /* Style for the video background */
+    #bgVideo {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1; /* Para mapunta sa likod ng slides */
+    }
+</style>
 
     <div class="container">
         <div class="slide active" id="slide1">
