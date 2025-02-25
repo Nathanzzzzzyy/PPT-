@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +14,6 @@
             font-family: 'Poppins', sans-serif;
         }
 
-        /* Background Video */
         #bgVideo {
             position: fixed;
             top: 0;
@@ -52,6 +50,7 @@
             flex-direction: column;
             color: white;
             text-align: center;
+            padding: 20px;
         }
 
         .active {
@@ -98,11 +97,17 @@
             cursor: not-allowed;
         }
 
-        img {
-            max-width: 90%;
+        .image-container {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .slide img {
+            max-width: 40%;
             max-height: 60%;
             border-radius: 10px;
-            margin-top: 20px;
         }
     </style>
 </head>
@@ -130,16 +135,18 @@
 
         <div class="slide" id="slide3">
             <h2>🖥️ USER INTERFACE</h2>
-            <img src="image1.png" alt="UI Screenshot" style="width: 40%;">
-            <img src="image2.png" alt="UI Screenshot" style="width: 40%;">
+            <div class="image-container">
+                <img src="image1.png" alt="UI Screenshot">
+                <img src="image2.png" alt="UI Screenshot">
+            </div>
         </div>
 
         <div class="slide" id="slide4">
             <h2>💻 CODE</h2>
-            <div style="display: flex; gap: 10px;">
-                <img src="image3.png" alt="Code Screenshot" style="width: 30%;">
-                <img src="image4.png" alt="Code Screenshot" style="width: 30%;">
-                <img src="image5.png" alt="Code Screenshot" style="width: 30%;">
+            <div class="image-container">
+                <img src="image3.png" alt="Code Screenshot">
+                <img src="image4.png" alt="Code Screenshot">
+                <img src="image5.png" alt="Code Screenshot">
             </div>
         </div>
 
