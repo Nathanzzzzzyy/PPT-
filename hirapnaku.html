@@ -60,16 +60,12 @@
         .slide h1, .slide h2 {
             font-size: 60px;
             font-weight: 700;
-            position: relative;
-            z-index: 2;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8);
         }
 
         .slide p, .slide ol {
             font-size: 24px;
-            position: relative;
-            z-index: 2;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
 
         .btn-container {
@@ -108,8 +104,6 @@
             flex-direction: row;
             gap: 10px;
             justify-content: center;
-            position: relative;
-            z-index: 2;
         }
 
         .slide img {
@@ -124,18 +118,25 @@
             height: 100%;
             object-fit: cover;
             z-index: -1;
-            border-radius: 20px;
         }
 
         #slide3 .image-container img {
             max-width: 70%;
-            max-height: 85%;
+            max-height: 90%;
         }
 
         #slide4 .image-container img {
             max-width: 35%;
             max-height: 65%;
         }
+
+        #slide1 h1 {
+            position: relative;
+            z-index: 1;
+            font-size: 80px;
+            text-shadow: 6px 6px 12px rgba(0, 0, 0, 1);
+        }
+
     </style>
 </head>
 
@@ -149,7 +150,7 @@
     <div class="container">
         <div class="slide active" id="slide1">
             <h1>🖩GRADE<br>CALCULATOR</h1>
-            <img class="bg-image" src="image0_transparent.png" alt="Background Image">
+            <img src="image0_transparent.png" alt="Background Image" class="bg-image">
         </div>
 
         <div class="slide" id="slide2">
@@ -179,7 +180,7 @@
 
         <div class="slide" id="slide5">
             <h2>🎥 DEMONSTRATION</h2>
-            <ol>
+            <ol style="text-align: left; font-size: 24px;">
                 <li>Open the Grade Calculator application.</li>
                 <li>Input sample grades (e.g., Prelims: 85, Midterms: 90, Finals: 88).</li>
                 <li>Click 'Calculate' to see the result.</li>
