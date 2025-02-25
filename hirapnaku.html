@@ -44,7 +44,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(0, 0, 0, 0.5);
             backdrop-filter: blur(10px);
             transform: rotateY(90deg);
             transition: transform 1s ease;
@@ -55,6 +55,15 @@
 
         .active {
             transform: rotateY(0deg);
+        }
+
+        .slide h1, .slide h2 {
+            font-size: 60px;
+            font-weight: 700;
+        }
+
+        .slide p, .slide ol {
+            font-size: 24px;
         }
 
         .btn-container {
@@ -93,28 +102,6 @@
             max-height: 60%;
             border-radius: 10px;
             margin-top: 20px;
-        }
-
-        /* Slide 1 Custom Design */
-        #slide1 {
-            background: #FAF7E8;
-            color: #1E2B26;
-            flex-direction: row;
-            justify-content: space-between;
-            padding: 40px;
-        }
-
-        #slide1 h1 {
-            font-size: 80px;
-            font-weight: 800;
-            text-align: left;
-            margin-left: 50px;
-        }
-
-        #slide1 img {
-            width: 300px;
-            height: auto;
-            margin-right: 50px;
         }
     </style>
 </head>
@@ -157,7 +144,7 @@
 
         <div class="slide" id="slide5">
             <h2>🎥 DEMONSTRATION</h2>
-            <ol style="text-align: left; font-size: 20px;">
+            <ol style="text-align: left; font-size: 24px;">
                 <li>Open the Grade Calculator application.</li>
                 <li>Input sample grades (e.g., Prelims: 85, Midterms: 90, Finals: 88).</li>
                 <li>Click 'Calculate' to see the result.</li>
