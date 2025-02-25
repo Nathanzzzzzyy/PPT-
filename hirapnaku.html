@@ -60,10 +60,14 @@
         .slide h1, .slide h2 {
             font-size: 60px;
             font-weight: 700;
+            position: relative;
+            z-index: 1;
         }
 
         .slide p, .slide ol {
             font-size: 24px;
+            position: relative;
+            z-index: 1;
         }
 
         .btn-container {
@@ -108,7 +112,7 @@
             border-radius: 10px;
         }
 
-        #slide1 img {
+        .background-image {
             position: absolute;
             top: 0;
             left: 0;
@@ -116,13 +120,6 @@
             height: 100%;
             object-fit: cover;
             z-index: -1;
-        }
-
-        #slide1 .title-box {
-            background: rgba(0, 0, 0, 0.7);
-            padding: 20px 40px;
-            border-radius: 20px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
         }
 
         #slide3 .image-container img {
@@ -135,6 +132,11 @@
             max-height: 65%;
         }
 
+        .overlay-box {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 20px;
+        }
     </style>
 </head>
 
@@ -147,49 +149,64 @@
 
     <div class="container">
         <div class="slide active" id="slide1">
-            <img src="image0_transparent.png" alt="Background Image">
-            <div class="title-box">
+            <img src="image0_transparent.png" alt="Background Image" class="background-image">
+            <div class="overlay-box">
                 <h1>🖩GRADE<br>CALCULATOR</h1>
             </div>
         </div>
 
         <div class="slide" id="slide2">
-            <h2>👥 MEMBERS</h2>
-            <p>John Francis Pescador</p>
-            <p>Jonathan Mabag</p>
-            <p>Dale Catabay</p>
-            <p>Daniel Lacanaria</p>
+            <img src="image0_transparent.png" alt="Background Image" class="background-image">
+            <div class="overlay-box">
+                <h2>👥 MEMBERS</h2>
+                <p>John Francis Pescador</p>
+                <p>Jonathan Mabag</p>
+                <p>Dale Catabay</p>
+                <p>Daniel Lacanaria</p>
+            </div>
         </div>
 
         <div class="slide" id="slide3">
-            <h2>🖥️ USER INTERFACE</h2>
-            <div class="image-container">
-                <img src="image1.png" alt="UI Screenshot">
-                <img src="image2.png" alt="UI Screenshot">
+            <img src="image0_transparent.png" alt="Background Image" class="background-image">
+            <div class="overlay-box">
+                <h2>🖥️ USER INTERFACE</h2>
+                <div class="image-container">
+                    <img src="image1.png" alt="UI Screenshot">
+                    <img src="image2.png" alt="UI Screenshot">
+                </div>
             </div>
         </div>
 
         <div class="slide" id="slide4">
-            <h2>💻 CODE</h2>
-            <div class="image-container">
-                <img src="image3.png" alt="Code Screenshot">
-                <img src="image4.png" alt="Code Screenshot">
-                <img src="image5.png" alt="Code Screenshot">
+            <img src="image0_transparent.png" alt="Background Image" class="background-image">
+            <div class="overlay-box">
+                <h2>💻 CODE</h2>
+                <div class="image-container">
+                    <img src="image3.png" alt="Code Screenshot">
+                    <img src="image4.png" alt="Code Screenshot">
+                    <img src="image5.png" alt="Code Screenshot">
+                </div>
             </div>
         </div>
 
         <div class="slide" id="slide5">
-            <h2>🎥 DEMONSTRATION</h2>
-            <ol style="text-align: left; font-size: 24px;">
-                <li>Open the Grade Calculator application.</li>
-                <li>Input sample grades (e.g., Prelims: 85, Midterms: 90, Finals: 88).</li>
-                <li>Click 'Calculate' to see the result.</li>
-                <li>Show how 'Clear' and 'Exit' buttons work.</li>
-            </ol>
+            <img src="image0_transparent.png" alt="Background Image" class="background-image">
+            <div class="overlay-box">
+                <h2>🎥 DEMONSTRATION</h2>
+                <ol style="text-align: left; font-size: 24px;">
+                    <li>Open the Grade Calculator application.</li>
+                    <li>Input sample grades (e.g., Prelims: 85, Midterms: 90, Finals: 88).</li>
+                    <li>Click 'Calculate' to see the result.</li>
+                    <li>Show how 'Clear' and 'Exit' buttons work.</li>
+                </ol>
+            </div>
         </div>
 
         <div class="slide" id="slide6">
-            <h1>🙏 Thank You for Listening!</h1>
+            <img src="image0_transparent.png" alt="Background Image" class="background-image">
+            <div class="overlay-box">
+                <h1>🙏 Thank You for Listening!</h1>
+            </div>
         </div>
     </div>
 
