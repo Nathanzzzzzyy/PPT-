@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,17 +15,15 @@
             font-family: 'Poppins', sans-serif;
         }
 
-        /* Background Pattern */
-        body::before {
-            content: "";
+        /* Background Video */
+        #bgVideo {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('image0_transparent.png') repeat;
-            opacity: 0.3;
-            z-index: -1;
+            object-fit: cover;
+            z-index: 0;
         }
 
         .container {
@@ -46,7 +45,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.5);
             backdrop-filter: blur(10px);
             transform: rotateY(90deg);
             transition: transform 1s ease;
@@ -59,26 +58,13 @@
             transform: rotateY(0deg);
         }
 
-        .slide h1 {
-            font-size: 70px;
+        .slide h1, .slide h2 {
+            font-size: 60px;
             font-weight: 700;
-            text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.5);
         }
 
-        .slide h2 {
-            font-size: 50px;
-        }
-
-        .slide img {
-            max-width: 40%;
-            max-height: 40%;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
-
-        #slide3 img {
-            max-width: 30%;
-            margin: 10px;
+        .slide p, .slide ol {
+            font-size: 24px;
         }
 
         .btn-container {
@@ -106,10 +92,28 @@
         button:hover {
             opacity: 0.8;
         }
+
+        button:disabled {
+            background: #aaa;
+            cursor: not-allowed;
+        }
+
+        img {
+            max-width: 90%;
+            max-height: 60%;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
     </style>
 </head>
 
 <body>
+    <video autoplay loop muted playsinline id="bgVideo">
+        <source src="video1.mp4" type="video/mp4">
+        <source src="video1.webm" type="video/webm">
+        Your browser does not support the video tag.
+    </video>
+
     <div class="container">
         <div class="slide active" id="slide1">
             <h1>GRADE<br>CALCULATOR</h1>
@@ -126,10 +130,8 @@
 
         <div class="slide" id="slide3">
             <h2>🖥️ USER INTERFACE</h2>
-            <div style="display: flex; justify-content: center; gap: 20px;">
-                <img src="image1.png" alt="UI Screenshot">
-                <img src="image2.png" alt="UI Screenshot">
-            </div>
+            <img src="image1.png" alt="UI Screenshot" style="width: 40%;">
+            <img src="image2.png" alt="UI Screenshot" style="width: 40%;">
         </div>
 
         <div class="slide" id="slide4">
@@ -168,6 +170,7 @@
         function showSlide(slideNumber) {
             document.querySelectorAll('.slide').forEach(slide => slide.classList.remove('active'));
             document.getElementById('slide' + slideNumber).classList.add('active');
+
             document.getElementById('prevBtn').disabled = slideNumber === 1;
             document.getElementById('nextBtn').disabled = slideNumber === totalSlides;
         }
@@ -187,4 +190,5 @@
         }
     </script>
 </body>
+
 </html>
