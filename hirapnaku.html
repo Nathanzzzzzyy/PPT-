@@ -4,13 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Grade Calculator Presentation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             overflow: hidden;
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
         /* Background Video */
@@ -21,7 +22,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            z-index: 0; /* Inadjust mula sa -1 para siguradong makikita */
+            z-index: 0;
         }
 
         .container {
@@ -31,22 +32,25 @@
             height: 100vh;
             perspective: 1200px;
             position: relative;
-            z-index: 1; /* Mas mataas na layer kaysa sa video */
+            z-index: 1;
         }
 
         .slide {
             position: absolute;
             width: 80vw;
             height: 70vh;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
             border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
             transform: rotateY(90deg);
             transition: transform 1s ease;
             flex-direction: column;
+            color: white;
+            text-align: center;
         }
 
         .active {
@@ -65,17 +69,18 @@
 
         button {
             padding: 12px 25px;
-            font-size: 20px;
+            font-size: 18px;
+            font-weight: bold;
             cursor: pointer;
             border: none;
             border-radius: 10px;
-            background: #4CAF50;
+            background: linear-gradient(90deg, #ff8c00, #ff2d55);
             color: white;
             transition: 0.3s;
         }
 
         button:hover {
-            background: #45a049;
+            opacity: 0.8;
         }
 
         button:disabled {
@@ -85,7 +90,7 @@
 
         img {
             max-width: 90%;
-            max-height: 70%;
+            max-height: 60%;
             border-radius: 10px;
             margin-top: 20px;
         }
@@ -93,8 +98,7 @@
 </head>
 
 <body>
-    <!-- Background Video -->
-    <video autoplay loop muted playsinline id="bgVideo" poster="fallback.jpg" controls>
+    <video autoplay loop muted playsinline id="bgVideo">
         <source src="video1.mp4" type="video/mp4">
         <source src="video1.webm" type="video/webm">
         Your browser does not support the video tag.
@@ -108,10 +112,10 @@
 
         <div class="slide" id="slide2">
             <h2>👥 Members</h2>
-            <p>JOHN FRANCIS PESCADOR</p>
-            <p>JONATHAN MABAG</p>
-            <p>DALE CATABAY</p>
-            <p>DANIEL LACANARIA</p>
+            <p>John Francis Pescador</p>
+            <p>Jonathan Mabag</p>
+            <p>Dale Catabay</p>
+            <p>Daniel Lacanaria</p>
         </div>
 
         <div class="slide" id="slide3">
@@ -164,12 +168,6 @@
                 showSlide(currentSlide);
             }
         }
-
-        // Ensure video plays automatically
-        document.addEventListener("DOMContentLoaded", function () {
-            let video = document.getElementById("bgVideo");
-            video.play().catch(error => console.error("Autoplay failed:", error));
-        });
     </script>
 </body>
 
